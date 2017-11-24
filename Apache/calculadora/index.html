@@ -1,0 +1,50 @@
+<html> 
+<head> 
+<title>Calculdora</title> 
+</head> 
+<body background=''> 
+<form method="post" action="calculadora.php"> 
+Introduce dos valores a operar<br><br> 
+Primer valor 
+<input type="text" NAME="numero_1"> 
+<br> 
+Segundo valor 
+<input type="text" name="numero_2"> 
+<br><br> 
+Elige una operacion a realizar:<br> 
+Sumar 
+<input type="checkbox" name="suma"> 
+<br> 
+Restar 
+<input type="checkbox" name="resta"> 
+<br> 
+Multiplicar 
+<input type="checkbox" name="multiplicacion"> 
+<br> 
+Dividir 
+<input type="checkbox" name="division"> 
+<br> 
+<input type="submit" name="Operar"> 
+</form> 
+<br><br> 
+<?php 
+if (isset($_POST['suma'])) 
+{ 
+$resultado=$_POST['numero_1']+$_POST['numero_2']; 
+} 
+if (isset($_POST['resta'])) 
+{ 
+$resultado=$_POST['numero_1']-$_POST['numero_2']; 
+} 
+if (isset($_POST['multiplicacion'])) 
+{ 
+$resultado=($_POST['numero_1'])*($_POST['numero_2']); 
+} 
+if (isset($_POST['division'])) 
+{ 
+$resultado=($_POST['numero_1'])/($_POST['numero_2']); 
+} 
+echo "El resultado es".$resultado;//te faltaba un ; 
+?> 
+</body> 
+</html> 
